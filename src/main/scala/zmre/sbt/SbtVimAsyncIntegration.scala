@@ -43,7 +43,7 @@ object SbtVimAsyncIntegrationPlugin extends AutoPlugin {
       }
     },
     testListeners += UnitTestLogger(vimIntegrationLogDirectory.value, (sources in Test).value, SbtVimAsyncIntegration.notifyToRefresh(vimIntegrationExecutable.value)),
-    vimIntegrationExecutable in ThisBuild := (if (System.getProperty("os.name").startsWith("Win")) "gvim.bat" else "gvim")
+    vimIntegrationExecutable in ThisBuild := "vim"
   )
 
 }
