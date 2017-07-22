@@ -50,7 +50,7 @@ object SbtVimAsyncIntegrationPlugin extends AutoPlugin {
 object SbtVimAsyncIntegration {
   def notifyToRefresh(vimExec: String): () => Unit = () => {
     println("Sending update notice to vim")
-    vimCall(vimExec, ":SyntasticCheck readsbtlogs")
+    vimCall(vimExec, ":ALELint")
     ()
   }
   def vimCall(vimExec: String, command: Seq[String]): Int = Process(List(vimExec, "--remote-send") ++ command).!
